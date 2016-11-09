@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src = "script.js"></script>
+</head>
+<body>
+<div id ="clock"></div><br />
+<script type = "text/javascript" language = "javascript">
+
+
+function showTime(){
+var now = new Date();
+var diem = "pm";
+var h = now.getHours(); 
+var m = now.getMinutes();
+var s = now.getSeconds();
+ 
+ if (h == 0){
+ h = 12 }
+ else if (h > 12){
+ h = h - 12
+ diem = "pm"}
+ if (h < 10){
+ h = "0" + h }
+ if (m < 10){
+ m = "0" + m}
+ if (s  < 10){
+ s = "0" + s}
+ var myClock = document.getElementById("clock");
+ myClock.textContent = h + ":" + m + ":" + s + " " + diem; 
+}
+setInterval("showTime()",1000);
+
+
+</script>
+</body>
+
+
+</html>
